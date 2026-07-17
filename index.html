@@ -32,15 +32,32 @@
 
   <!-- Interaction Overlay -->
   <div id="intro-overlay" class="overlay">
-    <div class="envelope">
-      <div class="floral-top"></div>
-      <h2 class="font-amiri text-gold title-names">دەریا و وێژە</h2>
-      <p class="open-subtitle">بانگێشتنامەی هاوسەرگیری</p>
-      <button id="open-btn" class="elegant-btn">
-        <span>کردنەوەی نامە</span>
-        <i class="ph ph-envelope-open"></i>
+    <div class="envelope-wrapper">
+      <div class="envelope-back"></div>
+      
+      <div class="envelope-card">
+        <div class="floral-top" style="margin-bottom: 10px;"></div>
+        <h2 class="font-amiri text-gold title-names" style="font-size: 2rem;">دەریا و وێژە</h2>
+        <p class="open-subtitle" style="margin-bottom: 10px;">بانگێشتنامەی هاوسەرگیری</p>
+        <div class="floral-bottom" style="margin-top: 10px;"></div>
+      </div>
+      
+      <div class="envelope-front">
+        <svg class="envelope-lines" viewBox="0 0 450 300" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          <path d="M 0 0 L 225 140 L 450 0" fill="none" stroke="var(--gold-color)" stroke-width="2" opacity="0.3"/>
+          <path d="M 15 0 L 225 125 L 435 0" fill="none" stroke="var(--gold-color)" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="envelope-flap">
+        <svg class="flap-lines" viewBox="0 0 450 180" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          <path d="M 15 15 L 225 160 L 435 15" fill="none" stroke="var(--gold-color)" stroke-width="1.5" opacity="0.4"/>
+          <path d="M 25 25 L 225 150 L 425 25" fill="none" stroke="var(--gold-color)" stroke-width="0.5" opacity="0.5"/>
+        </svg>
+      </div>
+      
+      <button id="open-btn" class="wax-seal-btn">
+        <span class="seal-text">کردنەوە</span>
       </button>
-      <div class="floral-bottom"></div>
     </div>
   </div>
 
