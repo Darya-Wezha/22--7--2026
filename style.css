@@ -1,0 +1,377 @@
+/* ===== Variables & Reset ===== */
+:root {
+  --bg-color: #fcfaf5;
+  --card-bg: #ffffff;
+  --text-primary: #4a3c31;
+  --text-secondary: #7a6b5d;
+  --gold-color: #c5a059;
+  --gold-light: rgba(197, 160, 89, 0.2);
+  --gold-gradient: linear-gradient(135deg, #dfc27d 0%, #c5a059 50%, #a6803c 100%);
+  --shadow: 0 10px 40px rgba(74, 60, 49, 0.08);
+  --border-radius: 16px;
+  
+  --font-base: 'Tajawal', sans-serif;
+  --font-classic: 'Amiri', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-align: center;
+  /* Soft background pattern/gradient */
+  background-image: radial-gradient(circle at top right, rgba(197, 160, 89, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at bottom left, rgba(197, 160, 89, 0.05) 0%, transparent 40%);
+  min-height: 100vh;
+}
+
+.font-amiri {
+  font-family: var(--font-classic);
+}
+
+.text-gold {
+  color: var(--gold-color);
+}
+
+/* ===== Overlays (Intro & Bismillah) ===== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.envelope {
+  background: var(--card-bg);
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gold-light);
+  max-width: 90%;
+  width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-names {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.open-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.elegant-btn {
+  background: var(--gold-gradient);
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-family: var(--font-base);
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
+
+.elegant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+}
+
+.bismillah-text {
+  font-size: 3rem;
+  opacity: 0; /* Will be animated */
+  text-shadow: 0 2px 10px rgba(197, 160, 89, 0.2);
+}
+
+/* ===== Main Card Container ===== */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--card-bg);
+  width: 100%;
+  position: relative;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.border-design {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px solid var(--gold-light);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.card-inner {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem;
+}
+
+/* ===== Typography & Sections ===== */
+.intro-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.names-section h1 {
+  font-size: 4rem;
+  color: var(--gold-color);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heart-icon {
+  font-size: 2rem;
+  color: var(--gold-color);
+  animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.subtitle-wrapper .line {
+  height: 1px;
+  background-color: var(--gold-light);
+  flex: 1;
+  max-width: 50px;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* ===== Grid Details ===== */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-detail {
+  border-left: 1px solid var(--gold-light);
+  border-right: 1px solid var(--gold-light);
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(197, 160, 89, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid var(--gold-light);
+}
+
+.detail-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.detail-item p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.date-en {
+  direction: ltr; /* To keep numbers correct */
+  font-family: sans-serif;
+  margin-bottom: 0.2rem;
+}
+
+/* ===== Dividers ===== */
+.divider {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+/* ===== Quran Section ===== */
+.quran-section {
+  margin: 2rem 0;
+}
+
+.quran-label {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.quran-arabic-box {
+  padding: 1.5rem;
+  background-color: rgba(197, 160, 89, 0.03);
+  border-radius: 8px;
+  border: 1px solid var(--gold-light);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.quran-arabic {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  line-height: 2;
+}
+
+.quran-kurdish {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.surah-ref {
+  font-size: 0.9rem;
+  color: var(--gold-color);
+  font-weight: 500;
+}
+
+/* ===== Closing & Address ===== */
+.closing-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.address-section {
+  background-color: #f9f8f6;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.address-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.address-text {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 50px;
+  border: 1px solid var(--gold-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.map-btn:hover {
+  background-color: var(--gold-color);
+  color: #fff;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 600px) {
+  .names-section h1 {
+    font-size: 3rem;
+  }
+  
+  .details-grid {
+    gap: 0.5rem;
+  }
+  
+  .detail-item h3 {
+    font-size: 1rem;
+  }
+  
+  .detail-item p {
+    font-size: 0.9rem;
+  }
+  
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .quran-arabic {
+    font-size: 1.3rem;
+  }
+  
+  .bismillah-text {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Utilities for GSAP */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
