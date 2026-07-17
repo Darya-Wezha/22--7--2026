@@ -13,10 +13,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Master Timeline
     const tl = gsap.timeline();
 
-    // 1. Fade out the envelope/intro overlay
-    tl.to(introOverlay, {
+    // 1. Envelope opening animation
+    tl.to(openBtn, {
       opacity: 0,
-      duration: 1,
+      scale: 0.5,
+      duration: 0.3,
+      ease: "power2.in"
+    })
+    .to('.envelope-flap', {
+      rotationX: 180,
+      duration: 0.8,
+      ease: "power2.inOut"
+    })
+    .to('.envelope-card', {
+      y: -80,
+      zIndex: 5,
+      duration: 0.8,
+      ease: "back.out(1.2)"
+    }, "-=0.2")
+    // 2. Fade out the envelope/intro overlay
+    .to(introOverlay, {
+      opacity: 0,
+      scale: 1.1,
+      duration: 0.8,
+      delay: 0.5,
       ease: "power2.inOut",
       onComplete: () => {
         introOverlay.style.display = 'none';
