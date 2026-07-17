@@ -369,6 +369,13 @@ body {
   gap: 0.5rem;
 }
 
+.map-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .map-btn {
   display: inline-flex;
   align-items: center;
