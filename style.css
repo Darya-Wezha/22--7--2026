@@ -10,8 +10,8 @@
   --shadow: 0 10px 40px rgba(74, 60, 49, 0.08);
   --border-radius: 16px;
   
-  --font-base: 'Tajawal', sans-serif;
-  --font-classic: 'Amiri', serif;
+  --font-base: 'Vazirmatn', 'Noto Sans Arabic', Tahoma, Arial, sans-serif;
+  --font-classic: 'Amiri', 'Noto Naskh Arabic', serif;
 }
 
 * {
